@@ -28,8 +28,8 @@ func ExampleNewWatcher() {
 				if event.Op&fsnotify.Write == fsnotify.Write {
 					log.Println("modified file:", event.Name)
 				}
-			case err := <-watcher.Errors:
-				log.Println("error:", err)
+			case errx := <-watcher.Errors:
+				log.Println("error:", errx)
 			}
 		}
 	}()

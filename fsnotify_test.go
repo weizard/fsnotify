@@ -14,6 +14,7 @@ func TestEventStringWithValue(t *testing.T) {
 		Rename:         `"/usr/someFile": RENAME`,
 		Remove:         `"/usr/someFile": REMOVE`,
 		Write | Chmod:  `"/usr/someFile": WRITE|CHMOD`,
+		CloseWrite:     `"/usr/someFile": CLOSE_WRITE`,
 	} {
 		event := Event{Name: "/usr/someFile", Op: opMask}
 		if event.String() != expectedString {
